@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="led_width">100px</dimen>
+    <dimen name="led_height">100px</dimen>
+    <dimen name="led_close_distance">105px</dimen>
+    <dimen name="led_far_distance">210px</dimen>
+</resources>
