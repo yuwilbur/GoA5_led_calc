@@ -13,49 +13,70 @@ public class LEDView extends RelativeLayout {
         addView(view);
     }
 
-    public void clearLED() {
-        turnOffLED('a');
-        turnOffLED('b');
-        turnOffLED('c');
-        turnOffLED('d');
-        turnOffLED('e');
-        turnOffLED('f');
-        turnOffLED('g');
+    public void clear() {
+        setLED(R.id.a, false);
+        setLED(R.id.b, false);
+        setLED(R.id.c, false);
+        setLED(R.id.d, false);
+        setLED(R.id.e, false);
+        setLED(R.id.f, false);
+        setLED(R.id.g, false);
     }
 
-    public void turnOnLED(char position) {
-        setLED(position, true);
+    public void turnOnA() {
+        setLED(R.id.a, true);
     }
 
-    public void turnOffLED(char position) {
-        setLED(position, false);
+    public void turnOnB() {
+        setLED(R.id.b, true);
     }
 
-    private void setLED(char position, boolean state) {
-        int id = R.id.a;
-        switch (position) {
-            case 'a':
-                id = R.id.a;
-                break;
-            case 'b':
-                id = R.id.b;
-                break;
-            case 'c':
-                id = R.id.c;
-                break;
-            case 'd':
-                id = R.id.d;
-                break;
-            case 'e':
-                id = R.id.e;
-                break;
-            case 'f':
-                id = R.id.f;
-                break;
-            case 'g':
-                id = R.id.g;
-                break;
+    public void turnOnC() {
+        setLED(R.id.c, true);
+    }
+
+    public void turnOnD() {
+        setLED(R.id.d, true);
+    }
+
+    public void turnOnE() {
+        setLED(R.id.e, true);
+    }
+
+    public void turnOnF() {
+        setLED(R.id.f, true);
+    }
+
+    public void turnOnG() {
+        setLED(R.id.g, true);
+    }
+
+    public void turn(boolean a, boolean b, boolean c, boolean d, boolean e, boolean f, boolean g) {
+        clear();
+        if (a) {
+            turnOnA();
         }
+        if (b) {
+            turnOnB();
+        }
+        if (c) {
+            turnOnC();
+        }
+        if (d) {
+            turnOnD();
+        }
+        if (e) {
+            turnOnE();
+        }
+        if (f) {
+            turnOnF();
+        }
+        if (g) {
+            turnOnG();
+        }
+    }
+
+    private void setLED(int id, boolean state) {
         ImageView segment = findViewById(id);
         segment.setColorFilter(getContext().getResources().getColor(state ? R.color.led_on : R.color.led_off));
     }
